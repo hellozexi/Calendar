@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+    <meta charset="UTF-8">
+    <link href="../static/home.css" rel="stylesheet" type="text/css">
+    <title>Calender</title>
+</head>
+
+<body>
+    <header>
+        <div id="header_group"  class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary btn-sm" id="prev_month">Prev</button>
+            <input type="text" placeholder="mm/yyyy" id="month_select">
+            <button class="btn btn-info btn-sm" id="month_select_btn" > go </button>
+            <button type="button" class="btn btn-secondary btn-sm" id="next_month">Next</button>
+            <button type="button" class="btn btn-primary" id="logout_btn">Log out</button>
+            <button type="button" class="btn btn-danger" id="remove_btn">Delete Account</button>
+        </div>
+        <button type="button" class="btn btn-primary btn-info" id="help_btn">help</button>
+        <!-- <button class="btn btn-info btn-sm" id="prev_month" > prev </button> -->
+        <h2 id="display_month">March 2017</h2>
+        <!-- <button class="btn btn-info btn-sm" id="next_month" > next </button> -->
+    </header>
+<br>
+<div class="container">
+    <table id="calendar_main" class="table table-bordered">
+        <tr >
+            <td>S</td>
+            <td>M</td>
+            <td>T</td>
+            <td>W</td>
+            <td>Th</td>
+            <td>F</td>
+            <td>S</td>
+        </tr>
+        <tbody>
+    </table>
+</div>
+<dialog id="help">
+    <h4> Instruction</h4>
+    <p> Welcome to your own calendar. </p>
+    <p> Double Click on the day box to create a event.</p>    
+    <p> Edit you event after click on the edit button next to it.</p>
+    <p> Delete it by using del button.</p>
+    <p> Add your own tags to your event in Update dialog.</p>
+    <p> Highlight your tags by clicking on the tags you created.</p>
+    <p> Delete your tags by clicking it. Look at the dialog below.</p>
+    <button type="button" class="btn btn-primary btn-sm" id="close_help_btn">close</button>
+</dialog>
+<div id="loginuser" style="width: 40%; margin: 5px; float: left;">
+    <form class="px-4 py-3">
+        <div class="form-group">
+            <label for="login_email">Email address</label>
+            <input type="email" class="form-control" id="login_email" placeholder="email@example.com">
+        </div>
+        <div class="form-group">
+            <label for="login_password">Password</label>
+            <input type="password" class="form-control" id="login_password" placeholder="Password">
+        </div>
+        <button type="button" class="btn btn-primary" id="login_btn">Sign in</button>
+    </form>
+</div>
+<div id="adduser" style="width: 40%; margin: 5px; float: right">
+    <form class="px-4 py-3">
+        <div class="form-group">
+            <label for="register_email">Email address</label>
+            <input type="email" class="form-control" id="register_email" placeholder="email@example.com">
+        </div>
+        <div class="form-group">
+            <label for="register_password">Password</label>
+            <input type="password" class="form-control" id="register_password" placeholder="Password">
+        </div>
+        <button type="button" class="btn btn-primary" id="register_btn">Sign up</button>
+    </form>
+    
+</div>
+
+<dialog id="mydialog">
+    <h4 id="edit_add_title">Add Event</h4>
+    <label for="title" id="title_lb">Event</label>
+    <input type="text" name="title" id="title">
+    <label for="time" id="time_lb">Time:</label>
+    <input type="text" placeholder="hh:mm" name="time" id="time">
+    <label for="tag" id="tag_lb">Tags:</label>
+    <input type="text" name="tag" id="tag">
+    <button type="button" class="btn btn-primary" id="save_tags_btn">Add Tag</button>
+    <button type="button" class="btn btn-primary" id="del_tag_btn">Delete Tag</button>
+    <!-- <button type="button" class="btn btn-primary" id="edit_tags_btn">Edit Tag</button> -->
+    <input type="hidden" name="date_id" id="date_id">
+    <input type="hidden" name="id" id="id">
+    <button type="button" class="btn btn-primary" id="save_btn">Add Event</button>
+    <input type="button" class="btn btn-primary" value="Save Changes" id="save_changes_btn">
+    <button type="button" class="btn btn-sm" id="close_dialog_btn">close</button>
+    <input type="hidden" id="csrf_token">
+</dialog>
+
+<script  src="../static/login.js"></script>
+<script> var csrf_token = "{{ csrf_token }}"; </script>
+<script  src="../static/home.js"></script>
+<script  src="../static/event.js"></script>
+<script  src="../static/tags.js"></script>
+</body>
+</html>

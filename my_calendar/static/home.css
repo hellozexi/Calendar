@@ -1,0 +1,166 @@
+#prev_month {
+    float: left;
+}
+#next_month {
+    float: right;
+}
+#calendar_main {
+    background: #fff;
+    border-collapse: collapse;
+    color: #222;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    width: 100%;
+    overflow: hidden;
+    table-layout: auto;
+
+}
+#header_group {
+    float: right; 
+    margin: 10px
+}
+td {
+    border: 1px solid #ccc;
+    color: #444;
+    vertical-align: top;
+    /*line-height: 80px;*/
+    /*text-align: center;
+    /*vertical-align: top;*/
+
+}
+tr:first-child td {
+    color: #222;
+    text-align: center;
+    font-weight: 700;
+    line-height: 22px;
+    text-align: center;
+
+    vertical-align: center;
+
+}
+body{
+    width: 760px; /* how wide to make your web page */
+    background-color: rgb(107, 131, 131); /* what color to make the background */
+    margin: 0 auto;
+    padding: 0;
+    /* margin-top: 10; */
+    font:12pt/15pt "Avenir", sans-serif; /* default font */
+  }
+  div#main{
+    background-color: #FFF;
+    margin: 0;
+    padding: 10px;
+  }
+  table {
+    background: #fff;
+    border-collapse: collapse;
+    color: #222;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    width: 100%;
+    overflow: hidden;
+    table-layout: auto;
+  
+  }
+  td {
+    border: 1px solid #ccc;
+    color: #444;
+    vertical-align: top;
+    /*line-height: 80px;*/
+    /*text-align: center;
+    /*vertical-align: top;*/
+  
+  }
+  tr:first-child td {
+    color: #222;
+    text-align: center;
+    font-weight: 700;
+    line-height: 22px;
+    text-align: center;
+  
+    vertical-align: center;
+  
+  }
+  
+  #display_month {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+  }
+  #prev_month {
+    float: left;
+  }
+  #next_month {
+    float: right;
+  }
+  
+  h4{
+    margin: 3px;
+  }
+  
+  
+  .editable {
+    height: 90px;
+    width: 83px;
+    text-align: left;
+    position: relative;
+  }
+  .events{
+    margin: 0;
+    /* padding-top: 1; */
+    /* padding-bottom: 1; */
+    text-align: left;
+    background-color: aquamarine;
+  
+  }
+  #mydialog {
+    display: none;
+    
+  }
+  
+  #shareDialog{
+    display: none;
+  }
+  
+  #showmore {
+    display: none;
+  }
+  .extraevents {
+    padding: 0;
+    margin: 0;
+    color: blue;
+  
+  }
+  
+  .extraevents:hover{
+      text-decoration: underline;
+  }
+  
+  .singleevent {
+    padding: 0;
+    margin: 0;
+  
+  }
+  
+  .sharedEvents{
+    background-color: lightsalmon;
+  }
+  
+  #logout_btn {
+     display: none; 
+  }
+  #remove_btn {
+    display: none;
+  }
+  #save_changes_byn {
+      display: none;
+  }
+  dialog {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  }
+
+  .tag {
+    background-color: aquamarine;
+  }
